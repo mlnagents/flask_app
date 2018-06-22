@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<script>
+function drawImageRect(strDataURI, canvas_id, rectangle){
+    var myCanvas = document.getElementById(canvas_id)
+    var ctx = myCanvas.getContext('2d');
+    var img = new Image;
+    img.onload = function(){
+        x_min = rectangle[0]*myCanvas.width/img.width;
+        y_min = rectangle[1]*myCanvas.height/img.height;
+        x_max = rectangle[2]*myCanvas.width/img.width;
+        y_max = rectangle[3]*myCanvas.height/img.height;
+        ctx.drawImage(img,0,0,myCanvas.width,myCanvas.height); // Or at whatever offset you like
+        ctx.beginPath();
+        ctx.lineWidth="6";
+        ctx.strokeStyle="green";
+        ctx.rect(x_min, y_min, x_max-x_min, y_max-y_min); 
+        ctx.stroke();
+    };
+    img.src = strDataURI;
+    }
+</script>
+{% for indx, obj in objects %}
+<canvas id="{{ indx }}" width="400" height="400" ></canvas>
+<script>
+drawImageRect("{{ obj.url }}","{{ indx }}", {{ obj.vert }})
+</script>
+{% endfor %}    
+
+{% endblock %}

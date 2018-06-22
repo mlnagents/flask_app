@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<table>
+    <tr>
+        <th>
+           datasets 
+        </th>
+        <th>
+            classes
+        <th>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                {% for dataset in datasets%}
+                <li><a href = "/dataset_view/{{dataset}}">{{dataset}}</a></li>
+                    {% endfor %}
+            </ul>
+        </td>
+        <td>
+            <ul>
+                {% for m_class in m_classes %}
+                <li><a href = "/class_view/{{m_class}}">{{m_class}}</a></li>
+                    {% endfor %}
+            </ul>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}</li></ul>
