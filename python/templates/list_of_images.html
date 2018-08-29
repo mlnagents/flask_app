@@ -23,7 +23,7 @@ function drawImageRect(strDataURI, canvas_id, rectangle){
     }
 </script>
 {% for indx, obj in objects %}
-<canvas id="{{ indx }}" width="400" height="400" ></canvas>
+<canvas id="{{ indx }}" width="400" height="200" ></canvas>
 <script>
 drawImageRect("{{ obj.url }}","{{ indx }}", {{ obj.vert }})
 </script>

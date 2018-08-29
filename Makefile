@@ -1,5 +1,5 @@
 PWD = $(shell pwd)
-PORT = 5000
+PORT = 4000
 default: 
 	make build
 	make run
