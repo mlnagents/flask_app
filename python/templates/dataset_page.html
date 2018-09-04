@@ -28,7 +28,7 @@ function drawImageRect(strDataURI, canvas_id, elements){
     }
 </script>
 {% for obj in objects %}
-<canvas id="{{ obj.image }}" width="400" height="400" ></canvas>
+<canvas id="{{ obj.image }}" width="400" height="200" ></canvas>
 <script>
  drawImageRect("{{ obj.url }}","{{ obj.image }}", {{ obj.elements|safe }});
 </script>

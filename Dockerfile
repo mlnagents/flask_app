@@ -5,4 +5,3 @@ RUN apt-get install -y python3-pip python3-dev build-essential git vim curl
 
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
-
