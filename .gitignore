@@ -1,2 +1,3 @@
 python/datasets/*
+!python/datasets/.gitkeep
 python/__pycache__
